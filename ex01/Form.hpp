@@ -7,13 +7,13 @@ class Form
 {
   private:
 	const std::string name;
-	bool isSigned;
+	bool checkSigned;
 	const int requiredSign;
 	const int requiredExecute;
 
   public:
 	Form(void);
-	Form(const std::string &name, int sign, int execute);
+	Form(const std::string &name, int requiredSign, int requiredExecute);
 	Form(const Form &form);
 	Form &operator=(const Form &form);
 	~Form(void);
