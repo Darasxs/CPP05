@@ -6,7 +6,7 @@
 class AForm
 {
   protected:
-	void execution(const Bureaucrat &bureaucrat) const;
+	virtual void execution(const Bureaucrat &executor) const = 0;
 
   private:
 	const std::string name;
@@ -19,7 +19,7 @@ class AForm
 	AForm(const std::string &name, int requiredSign, int requiredExecute);
 	AForm(const AForm &form);
 	AForm &operator=(const AForm &form);
-	~AForm(void);
+	virtual ~AForm(void);
 
 	class GradeTooHighException : public std::exception
 	{
@@ -28,6 +28,12 @@ class AForm
 	};
 
 	class GradeTooLowException : public std::exception
+	{
+		public:
+		const char *what() const throw();
+	};
+
+	class FormNotSigned : public std::exception
 	{
 		public:
 		const char *what() const throw();
