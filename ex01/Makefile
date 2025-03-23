@@ -1,12 +1,12 @@
 .SILENT:
 
-NAME = Bureucrat
+NAME = Bureaucrat
 FLAGS = -Wall -Wextra -Werror -std=c++17
 CC = c++
 
 SRC =	main.cpp \
-		Bureucrat.cpp \
-		form.cpp
+		Bureaucrat.cpp \
+		Form.cpp
 
 OBJ = $(SRC:%.cpp=%.o)
 
