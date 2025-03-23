@@ -6,7 +6,10 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 03:06:15 by dpaluszk          #+#    #+#             */
-/*   Updated: 2025/03/23 03:06:16 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2025/03/23 13:54:30 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "Bureucrat.hpp"
+#include "Form.hpp"
 

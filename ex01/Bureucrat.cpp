@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 03:06:12 by dpaluszk          #+#    #+#             */
-/*   Updated: 2025/03/23 12:48:31 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2025/03/23 13:53:27 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,5 +78,13 @@ std::ostream &operator<<(std::ostream &out, const Bureucrat &bureucrat)
 
 void Bureucrat::signForm(Form &form) const
 {
-	//
+	try
+	{
+		form.beSigned(*this);
+		std::cout << name << "signed" << form.getName() << std::endl;
+	}
+	catch(const std::exception &e)
+	{
+		std::cout << name << "couldn't sign" << form.getName() << std::endl << "because " << e.what() << std::endl;
+	}
 }
