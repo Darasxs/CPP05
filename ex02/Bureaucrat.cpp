@@ -6,14 +6,16 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 15:05:02 by dpaluszk          #+#    #+#             */
-/*   Updated: 2025/03/24 10:45:03 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2025/03/24 10:53:38 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(void) : name("Bureaucrat"), grade(150) {}
+Bureaucrat::Bureaucrat(void) : name("Bureaucrat"), grade(150)
+{
+}
 
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : name(name)
 {
@@ -25,7 +27,9 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade) : name(name)
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &bureaucrat) : name(bureaucrat.name),
-	grade(bureaucrat.grade) {}
+	grade(bureaucrat.grade)
+{
+}
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &bureaucrat)
 {
@@ -35,7 +39,9 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &bureaucrat)
 	return (*this);
 }
 
-Bureaucrat::~Bureaucrat(void) {}
+Bureaucrat::~Bureaucrat(void)
+{
+}
 
 std::string Bureaucrat::getName(void) const
 {
@@ -84,22 +90,21 @@ void Bureaucrat::signForm(AForm &form) const
 	}
 }
 
-void	executeForm(const AForm &form) const
+void Bureaucrat::executeForm(const AForm &form) const
 {
 	try
 	{
 		form.execute(*this);
 		std::cout << name << " executed " << form.getName() << std::endl;
 	}
-	catch
+	catch (const std::exception &e)
 	{
-		std::cout << name << " couldn't execute " << form.getName() << std::endl;
+		std::cout << name << " couldn't execute " << form.getName() << " because " << e.what() << std::endl;
 	}
 }
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat)
 {
-	out << bureaucrat.getName() << ",
-		bureaucrat grade " << bureaucrat.getGrade();
+	out << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
 	return (out);
 }
