@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 22:51:57 by dpaluszk          #+#    #+#             */
-/*   Updated: 2025/03/24 23:42:00 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2025/03/25 00:01:14 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ AForm *Intern::makeForm(std::string name, std::string target)
 	AForm *(*formCreators[])(const std::string &) = {createRobotomyRequestForm,
 		createPresidentialPardonForm, createShrubberyCreationForm};
 
-	for (int i = ; i < 3; i++)
+	for (int i = 0; i < 3; i++)
 	{
 		if (name == formNames[i])
 		{
