@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/23 03:06:12 by dpaluszk          #+#    #+#             */
-/*   Updated: 2025/03/23 15:48:21 by dpaluszk         ###   ########.fr       */
+/*   Created: 2025/03/08 14:23:03 by daras             #+#    #+#             */
+/*   Updated: 2025/03/23 14:02:56 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(void) : name("Bureaucrat"), grade(150) {}
 
@@ -69,20 +68,6 @@ const char *Bureaucrat::GradeTooHighException::what() const throw()
 const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return ("Grade is too low");
-}
-
-void Bureaucrat::signForm(Form &form) const
-{
-	try
-	{
-		form.beSigned(*this);
-		std::cout << name << " signed " << form.getName() << std::endl;
-	}
-	catch (const std::exception &e)
-	{
-		std::cout << name << " couldn't sign " << form.getName()
-				  << " because " << e.what() << std::endl;
-	}
 }
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat)

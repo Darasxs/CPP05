@@ -1,11 +1,11 @@
 .SILENT:
 
-NAME = Bureucrat
+NAME = Bureaucrat
 FLAGS = -Wall -Wextra -Werror -std=c++17
 CC = c++
 
 SRC =	main.cpp \
-		Bureucrat.cpp
+		Bureaucrat.cpp
 
 OBJ = $(SRC:%.cpp=%.o)
 
@@ -19,6 +19,9 @@ $(NAME): $(OBJ)
 		echo "------------------------------------------------"; \
 	fi
 	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+
+%.o: %.cpp
+	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJ)
