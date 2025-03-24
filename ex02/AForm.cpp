@@ -6,12 +6,12 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 15:03:00 by dpaluszk          #+#    #+#             */
-/*   Updated: 2025/03/23 16:19:39 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2025/03/24 10:38:56 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
-//#include "ShrubberyCreationForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 AForm::AForm(void) : name("Default"), checkSigned(false), requiredSign(150),
 	requiredExecute(150) {}
