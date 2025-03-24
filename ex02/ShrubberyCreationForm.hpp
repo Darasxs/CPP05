@@ -10,7 +10,7 @@ class ShrubberyCreationForm : public AForm
 {
   private:
 	std::string target;
-	void execution(const Bureaucrat &executor) const;
+	void execution(const Bureaucrat &executor) const override;
 
   public:
 	ShrubberyCreationForm(void);
