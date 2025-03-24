@@ -3,14 +3,20 @@
 
 # include "AForm.hpp"
 
+class	Bureaucrat;
+
 class ShrubberyCreationForm : public AForm
 {
-  public:
-	ShrubberyCreationForm(const std::string &target);
-	virtual ~ShrubberyCreationForm(void);
+  private:
+	std::string target;
+	void execution(const Bureaucrat &executor) const;
 
-  protected:
-	void execution(const Bureaucrat &executor) const override;
+  public:
+	ShrubberyCreationForm(void);
+	ShrubberyCreationForm(const std::string &target);
+	ShrubberyCreationForm(const ShrubberyCreationForm &form);
+	ShrubberyCreationForm &operator=(const ShrubberyCreationForm &form);
+	virtual ~ShrubberyCreationForm(void);
 };
 
 #endif
